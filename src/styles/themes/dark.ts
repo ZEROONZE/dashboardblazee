@@ -13,7 +13,7 @@ colors:{
 
    success:'#4E41F1O',
    info:'#F7931B',
-   warning:'E44C4E',
+   warning:'#E44C4E',
 
 
 },

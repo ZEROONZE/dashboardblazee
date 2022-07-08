@@ -6,16 +6,27 @@ import { Grid } from './styles';
 import MainHeader from '../MainHeader';
 import Aside from '../Aside';
 import Content from '../Content';
+import Dashboard from '../pages/Dashboard';
+
+interface BaseLayoutProps {
+  children?: React.ReactNode;
+}
 
 
+const Layout: React.FC<BaseLayoutProps> = ({children}) => {
 
-const Layout: React.FC = () => (
+return ( 
+
+
     <Grid>
         <MainHeader />
         <Aside />
-        <Content />
+        <Content>
+            { children }
+            
+        </Content>
     </Grid>
 );
-
+}
 
 export default Layout;

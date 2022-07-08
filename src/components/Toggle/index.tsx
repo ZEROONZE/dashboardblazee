@@ -5,14 +5,14 @@ import {Container, ToggleLabel, ToggleSelector } from './styles';
  const Toggle: React.FC  = () => (
  
     <Container>
-        <ToggleLabel>Dark</ToggleLabel>
+        <ToggleLabel className='dark-light'>Dark</ToggleLabel>
         <ToggleSelector 
           checked
           uncheckedIcon={false}
           checkedIcon={false}
           onChange={()=> console.log('mudou')}
         />
-        <ToggleLabel>Light</ToggleLabel>
+        <ToggleLabel className='dark-light'>Light</ToggleLabel>
     </Container>
 
 

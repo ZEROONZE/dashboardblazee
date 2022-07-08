@@ -6,19 +6,29 @@ import { Grid } from './components/Layout/styles';
 import MainHeader from './components/MainHeader';
 import GlobalStyles from './styles/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
-import Layout from './components/Layout';
+
 import dark from './styles/themes/dark';
 
- 
+import ContentHeader from './ContetHeader'; 
+import Layout from './components/Layout';
+import List from './components/pages/List';
+import { Routes, Route } from 'react-router-dom';
+import Dashboard from './components/pages/Dashboard';
+
+import RoutesPages from './routes';
+
+
 const App: React.FC = () => { 
       
       return ( 
         <ThemeProvider theme={dark}>
-    
-    
-    
-   <Layout />
-    <GlobalStyles />
+        <GlobalStyles />
+
+       
+       
+       <RoutesPages />
+
+
 
 
     </ThemeProvider>
