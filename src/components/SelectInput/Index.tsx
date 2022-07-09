@@ -5,15 +5,16 @@ interface IselectProps{
         value: string | number;
         label: string | number;
     }[],
-
+  onChange(event: React.ChangeEvent<HTMLSelectElement>): void | undefined;
+  defaultValue?: string | number;
 }
 
 
 
-const SelecInput: React.FC<IselectProps> = ({options}) => {
+const SelecInput: React.FC<IselectProps> = ({options, onChange, defaultValue }) => {
   return (
-   <Container >
-   <select>
+   <Container>
+   <select onChange={onChange} defaultValue={defaultValue}>
 
         { 
         options.map(option => ( 

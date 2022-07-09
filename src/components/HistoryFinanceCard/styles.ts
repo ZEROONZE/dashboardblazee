@@ -35,7 +35,8 @@ position: relative;
 
     > div span {
         padding-left: 10px;
-
+        font-weight: 500;
+        font-size: 19px;
     }
 
     div small{
