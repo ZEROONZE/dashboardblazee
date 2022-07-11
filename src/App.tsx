@@ -6,7 +6,7 @@ import { Grid } from './components/Layout/styles';
 import MainHeader from './components/MainHeader';
 import GlobalStyles from './styles/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
-
+import { useTheme } from './components/hooks/theme';
 import dark from './styles/themes/dark';
 
 import ContentHeader from './ContetHeader'; 
@@ -19,18 +19,12 @@ import RoutesPages from './routes';
 
 
 const App: React.FC = () => { 
-      
+      const {theme} = useTheme()
       return ( 
-        <ThemeProvider theme={dark}>
+        <ThemeProvider theme={theme}>
         <GlobalStyles />
-
-       
-       
+        
        <RoutesPages />
-
-
-
-
     </ThemeProvider>
   );
 }

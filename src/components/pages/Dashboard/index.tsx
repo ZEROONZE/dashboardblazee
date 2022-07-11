@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import React, {useMemo, useState} from 'react'
 import { Container, Content } from './style';
 import ContentHeader from '../../../ContetHeader';
 import SelecInput from '../../SelectInput/Index';
 import { useParams } from 'react-router-dom';
 import WalletBox from '../../Walletbox.tsx';
 import MessageBox from '../../MessageBox';
-import PieChart from '../../pieChart';
+import PieChartBox from '../../pieChart';
 import happyImg from '../../../assets/happy.svg';
 
 
@@ -32,6 +32,38 @@ const years = [
     {value:'Maria', label: 'Srouza'},
     {value:'Jão', label: 'Seouza'}
 ]
+
+
+
+const relationExpensesVersusGains = useMemo(() =>{
+const total = 100 + 100;
+
+const Percentgains = (30 / total) * 100;
+const Percentexpenses = (30 / total) * 100;
+const data = [
+  {
+    name: "Red",
+    value: Percentgains,
+    percent: Number(Percentgains.toFixed(1)),
+    color:'#ff0000',
+
+
+  },
+{   
+   name: "black",
+   value: Percentgains,
+   percent: Number(Percentexpenses.toFixed(1)),
+   color:'#000',
+},
+
+
+
+
+];
+return data;
+
+
+},[30, 30]);
   return (
    <Container>
     
@@ -47,8 +79,8 @@ const years = [
   <Content>
 <WalletBox 
 title="saldo"
-color="green"
-amount={850.00}
+color="white"
+amount={10}
 footerlabel="Atualizado com base nas entradas"
 icon="dolar"
 />
@@ -56,15 +88,15 @@ icon="dolar"
 <WalletBox 
 title="Red"
 color="red"
-amount={150.00}
+amount={70}
 footerlabel="Atualizado com base nas entradas"
 icon="arrowUP"
 />
 
 <WalletBox 
-title="Black"
+title="Black" 
 color="#000"
-amount={500.000}
+amount={80}
 footerlabel="Atualizado com base nas entradas"
 icon="arrowDown"
 />
@@ -78,7 +110,7 @@ icon={happyImg}
 
 />
 
-<PieChart />
+<PieChartBox data={relationExpensesVersusGains}/>
   </Content>
 
    </Container>

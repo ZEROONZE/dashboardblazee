@@ -18,6 +18,7 @@ margin-bottom: 30px;
     margin: 0 10px;
     transition: opacity .3s;
     border-radius: 6px;
+    opacity: 0.3;
     &:hover{
         opacity: .7;
     }
@@ -44,6 +45,9 @@ margin-bottom: 30px;
         border-bottom: 10px solid black;
         border-radius: 5px;
 
+    }
+    .tag-actived{
+            opacity: 1;
     }
 
 

@@ -1,5 +1,12 @@
 import React from "react";
+import { NumericLiteral } from "typescript";
+//import {
+//PieChart,
+//Pie,
+//Cell,
+//ResponsiveContainer
 
+//} from 'recharts'
 
 import { 
     Container,
@@ -12,8 +19,18 @@ import {
 
 } from "./styles";
 
+interface IPieChartProps{
+    data: {
+        name: String;
+        value: Number;
+        percent:Number; 
+        color: String;
 
-const PieChart: React.FC = () =>( 
+}[];
+}
+
+
+const PieChart: React.FC<IPieChartProps> = ({ data }) =>( 
 
 
 
@@ -21,21 +38,20 @@ const PieChart: React.FC = () =>(
             <SlideLeft>
                 <h2>Relação</h2>
                 <LegendContainer>
-                <Legend color="#eb0000">
-                    <div>95%</div>
-                    <span>Red</span>
-                </Legend>
-
-                <Legend color="#000">
-                    <div>5%</div>
-                    <span>Black</span>
-                </Legend>
+                    { 
+                    data.map(indicator => (
+                             <Legend   color="#000">
+                             <div>9%</div>
+                             <span>{indicator.name}</span>
+                             </Legend>
+                     ) )
+                    }
+               
                 </LegendContainer>
             </SlideLeft>
 
             <SliderRigth>
-                
-               
+                       
             </SliderRigth>
 
     </Container>

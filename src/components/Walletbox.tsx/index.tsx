@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
 import CountUp from 'react-countup';
 
-import dollarImg from '../../assets/dollar.svg';
-import arrowUpImg from '../../assets/arrow-down.svg';
-import arrowDownImg from '../../assets/arrow-up.svg';
+import dollarImg from '../../assets/logo-icon1.png';
+import arrowUpImg from '../../assets/logo-icon.png';
+import arrowDownImg from '../../assets/logo-icon.png';
 
 import { Container } from "./styles";
 interface IWalletBoxProps {
@@ -44,10 +44,7 @@ return (
             <CountUp 
             end={amount}
             duration={3}
-            prefix={"R$"}
-            separator="."
-            decimal=","
-            decimals={2}
+            
             />
             
             </h1>

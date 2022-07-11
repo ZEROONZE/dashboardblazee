@@ -9,15 +9,18 @@ import { Container,
             } from './styles';
 
             import {
+              FcPositiveDynamic,
+              FcExport,
+              FcAreaChart,
+              FcNext,
+              FcComboChart,
+              FcOrgUnit,
+              FcCurrencyExchange
+              
 
-              MdOutlineDashboard,
-MdTrendingUp,
-MdOutlinePoll,
-MdAssessment,
-MdExitToApp
+} from 'react-icons/fc';
+import { SiBuzzfeed } from "react-icons/si";
 
-
-} from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 
@@ -38,30 +41,38 @@ const Aside: React.FC = () => {
 
             <Link to="/dashboard" className='DASHBOARD'>
 
-                    <MdOutlineDashboard />
+                    <FcAreaChart className='icon' />
                      DASHBOARD
             </Link>
-
+            <Link to="/list/relatorios">
+            <FcComboChart className='icon' />
+            Relatório Double
+            </Link>
             <Link to="/list/entry-balance">
                 
-                     <MdOutlinePoll />
+                     <FcNext className='icon'/>
                     Black
             </Link>
 
             <Link to="/list/exit-balance">
 
-                     <MdTrendingUp />
+                     <FcNext className='icon'/>
                     Red
             </Link>
 
+            <Link to="/list/relatorios">
+
+                     <FcOrgUnit className='icon'/>
+                     Relatório Mines
+            </Link>
             <Link to="/list/exit-balance">
 
-                     <MdOutlinePoll />
-                     Relatório Mines
+                     <FcPositiveDynamic className='icon'/>
+                     Relatório Crash
             </Link>
             <Link to="#" className='exit'>
 
-                    <MdExitToApp />
+                    <FcExport className='icon'/>
                      Sair
             </Link>
             

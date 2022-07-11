@@ -33,6 +33,11 @@ font-size: 19px;
 transition: opacity .3s;
 
 transition: all 0.2s;
+
+    .icon{
+        font-size: 25px;
+    }
+
 &:hover{
     opacity: .7;
     transform: translateX(10px);

@@ -6,22 +6,22 @@ interface IHistoryFinanceCardProps {
     tagColor: string;
     title: string;
     subtilte: string;
-    amount: string;
+  
 }
 
 
 const HistoryFinanceCard: React.FC<IHistoryFinanceCardProps> = ({
-     tagColor, title, subtilte, amount
+     tagColor, title, subtilte
 }) => {
 return(
 
 <Container>
-<Tag color={tagColor} />
+<Tag color="#f90000" />
 <div>
     <span>{title}</span>
     <small>{subtilte}</small>
 </div>
-<h3>{amount}</h3>
+<h3>{}</h3>
 </Container>
 
 )

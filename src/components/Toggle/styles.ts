@@ -14,7 +14,7 @@ align-items: center;
 
 
 export const ToggleLabel = styled.span`
-color: ${props => props.theme.colors.white};
+color: ${props => props.theme.colors.info};
 width: 30px;
     
     `;
@@ -22,7 +22,7 @@ width: 30px;
 export const ToggleSelector = styled(Switch).attrs<ReactSwitchProps>(
     ({theme}) => ({   
      onColor: theme.colors.info,
-     offColor: theme.colors.black
+     offColor: theme.colors.info
 
     }))<ReactSwitchProps>`
     margin: 0 7px;

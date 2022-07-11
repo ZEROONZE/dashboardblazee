@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, BrowserRouter} from 'react-router-dom'
 import Layout from "../components/Layout";
 import Dashboard from "../components/pages/Dashboard";
+import Api from "../components/pages/Dashboard/Home";
 import List from "../components/pages/List";
 
 
@@ -12,6 +13,7 @@ return (
       <Routes>
         <Route path="/dashboard"  element={<Dashboard />} />
         <Route path="/list/:type" element={<List />} />
+        <Route path="/list/relatorios" element={<Api />} />
       </Routes>
     </Layout>
 );
