@@ -29,11 +29,19 @@ display: flex;
 align-items: center;
 padding: 6px;
 padding-left: 17px;
-font-size: 19px;
+font-size: 13px;
+font-weight: bold;
 transition: opacity .3s;
 
 transition: all 0.2s;
-
+.segundo{
+    margin-left: 5px;
+    padding-left: 5px;
+}
+.segundoo{
+    margin-left: 7px; 
+    padding-left: 5px;
+}
     .icon{
         font-size: 25px;
     }

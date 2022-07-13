@@ -23,7 +23,10 @@ margin-bottom: 30px;
         opacity: .7;
     }
    
+>SelecInput{
+ background-color: #000;
 
+}
 
     
 
@@ -43,6 +46,15 @@ margin-bottom: 30px;
         width: 55px;
         margin: 0 auto;
         border-bottom: 10px solid black;
+        border-radius: 5px;
+
+    }
+     .tag-filter-white::after{
+        content: '';
+        display: flex;
+        width: 55px;
+        margin: 0 auto;
+        border-bottom: 10px solid white;
         border-radius: 5px;
 
     }

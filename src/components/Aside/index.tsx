@@ -15,7 +15,7 @@ import { Container,
               FcNext,
               FcComboChart,
               FcOrgUnit,
-              FcCurrencyExchange
+              FcDownRight
               
 
 } from 'react-icons/fc';
@@ -46,29 +46,29 @@ const Aside: React.FC = () => {
             </Link>
             <Link to="/list/relatorios">
             <FcComboChart className='icon' />
-            Relatório Double
+            RELATÓRIO DOUBLE ON
             </Link>
             <Link to="/list/entry-balance">
                 
-                     <FcNext className='icon'/>
-                    Black
+                     <FcDownRight className='icon segundoo'/>
+                     RELATÓRIO DOUBLE OFF
             </Link>
 
             <Link to="/list/exit-balance">
 
-                     <FcNext className='icon'/>
-                    Red
+                     <FcDownRight className='icon segundo'/>
+                    DICAS DOUBLE
             </Link>
 
-            <Link to="/list/relatorios">
+            <Link to="">
 
                      <FcOrgUnit className='icon'/>
-                     Relatório Mines
+                     RELATÓRIO MINES
             </Link>
-            <Link to="/list/exit-balance">
+            <Link to="">
 
                      <FcPositiveDynamic className='icon'/>
-                     Relatório Crash
+                     RELATÓRIO CRASH
             </Link>
             <Link to="#" className='exit'>
 

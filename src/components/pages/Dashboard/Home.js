@@ -5,7 +5,7 @@ import React from 'react';
 
 
 
-class Api extends React.Component {
+class List extends React.Component {
  
     
     state = {
@@ -31,7 +31,7 @@ class Api extends React.Component {
             <div className='box'>
                 
                 <div className='tabela-title'>
-                   
+                   <h1 className="title">Relatório Double</h1>
                 </div>
 
                     <table className='tabela'>
@@ -64,4 +64,4 @@ class Api extends React.Component {
     }
 }
 
-export default Api;
+export default List;
