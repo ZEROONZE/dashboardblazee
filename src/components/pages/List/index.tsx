@@ -2,15 +2,15 @@ import React, {useMemo, useState, useEffect} from 'react'
 import { Container, Content, Filters} from './style';
  import {uuid} from 'uuidv4';
 import gains from '../../../repositories/gains';
-import expenses from '../../../repositories/expenses';
+
 import ContentHeader from '../../../ContetHeader';
 import SelecInput from '../../SelectInput/Index';
 import HistoryFinanceCard from '../../HistoryFinanceCard';
-import { useParams } from 'react-router-dom';
+
 import FormatCurrency from '../../../Utils/fomatCurrency';
 import FormatDate from     '../../../Utils/fomartDate';
 import listOfMonths from '../../../Utils/months';
-import axios from 'axios'
+
 
 
 interface IRouteParams {
