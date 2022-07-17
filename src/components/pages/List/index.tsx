@@ -17,7 +17,7 @@ interface IRouteParams {
   match: {
       params: {
           type: string;
-      }
+      };
   }
 }
 
