@@ -12,7 +12,11 @@ return (
     <Layout>
       <Routes>
         <Route path="/dashboard"  element={<Dashboard />} />
-        <Route path="/list/:type" element={<List />} />
+        <Route path="/list/:type" element={<List match={{
+        params: {
+          type: ""
+        }
+      }} />} />
         <Route path="/list/relatorios" element={<Api />} />
       </Routes>
     </Layout>

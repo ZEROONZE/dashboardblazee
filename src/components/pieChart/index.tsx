@@ -1,47 +1,49 @@
-import React from "react";
-import { NumericLiteral } from "typescript";
-//import {
-//PieChart,
-//Pie,
-//Cell,
-//ResponsiveContainer
 
-//} from 'recharts'
+import React from 'react';
+
+import {
+   PieChart,
+  
+   Cell,
+   ResponsiveContainer,
+   Pie
+} from 'recharts';
 
 import { 
     Container,
     SlideLeft,
     LegendContainer,
     Legend,
-    SliderRigth,
+    SideRight,
+ }  from './styles';
+
+
+ interface IPieChartProps {
+     data: {
+        name: string;
+        value: number;
+        percent: number;
+        color: string;
+     }[];
+ }
+
+
+const PieChartBox: React.FC<IPieChartProps> = ({ data }) => {
 
 
 
-} from "./styles";
 
-interface IPieChartProps{
-    data: {
-        name: String;
-        value: Number;
-        percent:Number; 
-        color: String;
-
-}[];
-}
-
-
-const PieChart: React.FC<IPieChartProps> = ({ data }) =>( 
-
-
+  
+        return (
 
     <Container>
             <SlideLeft>
-                <h2>Relação</h2>
+                <h2>Gráfico</h2>
                 <LegendContainer>
                     { 
-                    data.map(indicator => (
-                             <Legend   color="#000">
-                             <div>9%</div>
+                    data.map((indicator) => (
+                             <Legend key={indicator.name} color={indicator.color}>
+                             <div>{indicator.percent}%</div>
                              <span>{indicator.name}</span>
                              </Legend>
                      ) )
@@ -50,16 +52,29 @@ const PieChart: React.FC<IPieChartProps> = ({ data }) =>(
                 </LegendContainer>
             </SlideLeft>
 
-            <SliderRigth>
-                       
-            </SliderRigth>
-
+            <SideRight>
+            <ResponsiveContainer>
+                <PieChart >
+                   <Pie  data={data} dataKey="percent">
+                
+                        {
+                            data.map((indicator) => (
+                                <Cell key={indicator.name} fill={indicator.color} />
+                            ))
+                        }
+                 </Pie>
+                </PieChart>
+            </ResponsiveContainer>
+        </SideRight>
     </Container>
+        );
+
+ 
 
 
-);
 
 
+} 
 
 
-export default PieChart;
+export default PieChartBox;

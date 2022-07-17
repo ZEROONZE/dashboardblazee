@@ -15,6 +15,7 @@ export const Content = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     border-radius: 20px;
+    
 `;
 
 

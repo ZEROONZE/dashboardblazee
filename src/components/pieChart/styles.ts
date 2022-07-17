@@ -7,14 +7,14 @@ interface ILegendProps{
 
 export const Container = styled.div`
 width: 40%;
-height: 260px;
+height: 300px;
 margin:  30px 0;
 padding: 0px 10px;
 background-color: ${props => props.theme.colors.tertiary};
-color: ${props => props.theme.colors.white};
+color: #d3d3d3;
 border-radius: 7px;
 display: flex;
-
+font-weight: bold;
 `;
 
 
@@ -50,4 +50,10 @@ text-align: center;
 
 
 `;
-export const SliderRigth = styled.main``;
+export const SideRight = styled.main`
+  display: flex;
+ flex: 1;
+  justify-content: center;
+
+
+`;

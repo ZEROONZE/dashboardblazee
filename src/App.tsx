@@ -16,6 +16,7 @@ import { Routes, Route } from 'react-router-dom';
 import Dashboard from './components/pages/Dashboard';
 
 import RoutesPages from './routes';
+import AuthRoutes from './routes/aouth.routes';
 
 
 const App: React.FC = () => { 

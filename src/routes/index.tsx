@@ -1,8 +1,10 @@
 
 import React from "react";
-
-
+import AuthRoutes from "./aouth.routes";
 import AppRoutes from "./app.routes";
+
+
+
 
 
 

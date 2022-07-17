@@ -10,7 +10,8 @@ background-color: ${props => props.theme.colors.tertiary};
 list-style: none;
 border-radius: 10px;
 margin: 10px;
-
+color: #d3d3d3;
+    font: bold;
 padding: 12px 0px;
 display: flex;
 justify-content: space-between;
@@ -54,7 +55,9 @@ position: relative;
         font-size: 24px;
         z-index: 1;
         position: relative;
-        color: #DCDCDC;
+       
+        color: #d3d3d3;
+    font: bold;
     }
 
     div small{
@@ -68,7 +71,8 @@ background-color: ${props => props.color};
 width: 50px;
 height: 100%;
 left: 0;
-
+color: #d3d3d3;
+    font: bold;
 border-top-right-radius: 13px;
 border-bottom-right-radius:13px ;
 border-radius: 4px;

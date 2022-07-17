@@ -13,6 +13,15 @@ import listOfMonths from '../../../Utils/months';
 import axios from 'axios'
 
 
+interface IRouteParams {
+  match: {
+      params: {
+          type: string;
+      }
+  }
+}
+
+
 interface IData {
   id: string;
   number: string;
@@ -20,23 +29,24 @@ interface IData {
   datetime: string;
   dataFormatted: string;
   tagColor: string;
-  
+  amount: string;
 
 }
 
 
-const List: React.FC = () => {
+const List: React.FC<IRouteParams> = ({ match }) => {
 const [data, setData] = useState<IData[]>([]);
-const [monthSelected, setMothSelected] = useState<string>(String(new Date().getMonth() + 1));
-const [yearSelected, setYearSelected] = useState<string>(String(new Date().getFullYear())); 
+const [monthSelected, setMonthSelected] = useState<number>(new Date().getMonth() + 1);
+const [daySelected, setDaySelected] = useState<number>(new Date().getDay() + 1);
+const [yearSelected, setYearSelected] = useState<number>(new Date().getFullYear()); 
 const [selectedColor, setSelectedColor] = useState(['red', 'black', 'white' ]);
 
-const { type } = useParams()
+const type = match.params.type;
 
 
 
   const title = useMemo(() =>{
-  return type === 'entry-balance' ? 'Black' : 'Red'
+  return type === 'entry-balance' ? 'Relatório Dash' : 'Red'
 
   },[type])
   
@@ -46,13 +56,16 @@ const { type } = useParams()
     },[type])
 
     const listData = useMemo(() =>{
-      return type === 'entry-balance' ? gains : expenses;
+      return type === 'entry-balance' ? gains : gains;
     },[type]);
 
 
 
 const years = useMemo(() =>{
 let uniqueYears: number[] =[];
+
+
+
 listData.forEach(item => {
   const date = new Date(item.date);
   const year = date.getFullYear();
@@ -70,24 +83,24 @@ return uniqueYears.map(year => {
   }
 });
 
-},[listData])
+},[listData]);
 
 
 
-const months = useMemo(() =>{
-  return listOfMonths.map((month, index) => {
+const day = useMemo(() =>{
+  return listOfMonths.map((day, index) => {
 
     return{
       value: index + 1,
-      label: month,
+      label: day,
     }
 
-  });
+  },[]);
  
    
 
   
-  },[])
+  },[]);
 
   const handleColorClick = (color: string) => {
     const alreadySelected = selectedColor.findIndex(item => item === color);
@@ -100,7 +113,25 @@ const months = useMemo(() =>{
     }
   }
 
+ const handleDaySelected = (day: string) => {
+        try {
+            const parseDay = Number(day);
+            setDaySelected(parseDay);
+        }
+        catch{
+            throw new Error('invalid day value. Is accept 0 - 24.')
+        }
+    }
 
+    const handleYearSelected = (year: string) => {
+        try {
+            const parseYear = Number(year);
+            setYearSelected(parseYear);
+        }
+        catch{
+            throw new Error('invalid year value. Is accept integer numbers.')
+        }
+    }
 
 
 
@@ -108,45 +139,53 @@ const months = useMemo(() =>{
 
 
 useEffect(() =>{
-const filteredDate = listData.filter((item) =>{
-const date = new Date (item.date);
-const month = String(date.getDate() + 1);
-const year = String(date.getFullYear());
 
-return month === monthSelected && year === yearSelected && selectedColor.includes(item.color);
+
+
+const filteredData = listData.filter(item => {
+const date = new Date (item.date);  
+const day = date.getDay();
+const year = date.getFullYear();
+
+return day === daySelected && year === yearSelected && selectedColor.includes(item.color);
 });
 
 
 
-const FormattedDate = filteredDate.map((item: {
-  [x: string]: any; number: any; color: string; date: string; 
-}) => {
-  return{ 
+const FormattedDate = filteredData.map(item => {
+  return { 
   id: uuid(),
   number: item.number,
   color:item.color,
+  amount:FormatCurrency(Number(item.amount)),
   datetime:item.datetime,
   dataFormatted: FormatDate(item.date),
-  tagColor: item.color === 'red' && '#ff0000' || item.color === 'black' && '#000' || '#fff'
+  tagColor: item.color === 'red' && '#ff0000' || item.color === 'black' && '#000' || '#fff',
   
 }
+
 });
 
 setData(FormattedDate);
+},[listData, monthSelected, yearSelected, data.length, daySelected, selectedColor]);
 
 
-},[listData, monthSelected, yearSelected, data.length, selectedColor]);
+
   return (
     <Container>
     
     <ContentHeader title={title} lineColor={lineColor}>
 
-    <SelecInput  options={months} onChange={(e) => setMothSelected(e.target.value)} defaultValue={monthSelected} 
-    
+    <SelecInput  options={day} onChange={(e) => handleDaySelected(e.target.value)} defaultValue={daySelected} 
+       />
    
+    <SelecInput 
+                    options={years} 
+                    onChange={(e) => handleYearSelected(e.target.value)} 
+                    defaultValue={yearSelected}
+                />
     
-    
-    />
+  
 
 
     </ContentHeader>
@@ -190,7 +229,7 @@ setData(FormattedDate);
         key={item.id}
         tagColor={item.tagColor}
         title={item.number}
-
+       
         datetime={item.datetime} subtilte={''}    />
     ))
 
@@ -200,5 +239,7 @@ setData(FormattedDate);
    </Container>    
   );
 }
+
+
 
 export default List;
