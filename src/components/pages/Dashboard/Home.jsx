@@ -44,8 +44,8 @@ class List extends React.Component {
                         <tbody className='tb-content'>
                              {this.state.linguagens.map(item => (
                           <tr key={item.id} className="fundo4">
-                            <td id='n2' value="1">{item.number === 'red' && <color className='rednumero'>{item.number}</color>|| item.color === 'red' && <color className='rednumero'>{item.number}</color> || item.color === 'black' && <color className='reda1numero'>{item.number}</color> || <color className='reda2numero'>{item.number} </color>}</td>
-                            <td id='n2' value="1" >{item.color === 'red' && <color className='reda'>Red</color> || item.color === 'black' && <color className='reda1'>Black</color> || <color className='reda2'>White</color>}</td>
+                            <td id='n2' value="1">{item.number}</td>
+                            <td id='n2' value="1" >{item.color}</td>
                             
   
                             <td> {item.datetime}</td>
