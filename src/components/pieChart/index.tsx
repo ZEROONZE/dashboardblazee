@@ -55,7 +55,7 @@ const PieChartBox: React.FC<IPieChartProps> = ({ data }) => {
             <SideRight>
             <ResponsiveContainer>
                 <PieChart >
-                   <Pie  data={data} dataKey="percent">
+                   <Pie  data={data} dataKey="percent" cx="50%" cy="50%" >
                 
                         {
                             data.map((indicator) => (
@@ -63,6 +63,8 @@ const PieChartBox: React.FC<IPieChartProps> = ({ data }) => {
                             ))
                         }
                  </Pie>
+
+                 
                 </PieChart>
             </ResponsiveContainer>
         </SideRight>

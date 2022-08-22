@@ -10,15 +10,20 @@
   justify-content: center;
  margin-top:4%;
  overflow-y: scroll;
- max-height : 600px;
+ max-height : 90%;
+ border-radius: 8px;
+
+ 
 }
+
+
  ::-webkit-scrollbar{
   width: 10px;
 
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color:rgba(0, 0, 0, 0.527);}
+  background-color:#fff;}
 
 ::-webkit-scrollbar-track {
   
@@ -43,8 +48,7 @@ color: #ffffff;
   box-shadow: 0px, 0px, 3px rgba(rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255), alpha);
   border-collapse: collapse;
   max-height: 540px;
- 
-  
+
    
 }
 
@@ -66,6 +70,7 @@ display: block;
 text-align: center;
 letter-spacing: 1.4px;
 color: aliceblue;
+z-index: 10px;
 
 }
 .titulo.tabela, th {
@@ -81,7 +86,7 @@ color: aliceblue;
 
 .table th, 
 .tabela td {
-padding: 8px 70px;
+padding: 4px 60px;
 border: 1px solid #50545a;
 
 text-align: center;
@@ -91,80 +96,103 @@ align-items: center;
 
 td{
   font-size: 20px;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
 }
 .tb-content{
   top: 0px;
-  font-family: cursive;
+ 
   position: relative;
 }
 .reda1numero{
-  font-family: cursive;
-  -webkit-text-stroke-width: 2px;
+
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   -webkit-text-stroke-color: #000;
-  font-size: 18px; color: #fffdd9;
-    
+  font-size: 18px; color: #000000;
+  font-size: 18px; 
+  font-weight: bold;
 }
 
 
 .rednumero{
-  font-family: cursive;
-  -webkit-text-stroke-width: 2px;
+ 
+  color: red;
   -webkit-text-stroke-color: rgb(255, 0, 0);
-  font-size: 18px; color: #fffdd9;
+  font-size: 18px; 
+   text-align: center;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: bold;
 }
 .reda2numero{
-  font-family: cursive;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: rgb(255, 255, 255);
-  font-size: 18px; color: #000000;
+  font-family: sans-serif;
+  -webkit-text-stroke-width: 1px;
+  
+  font-size: 18px; color: #ffffff;
 }
 
 .reda{
-  font-family: cursive;
+
+
   color: rgb(255, 255, 255);
-  width: 300px;
-	height: 300px;
-	border-radius: 10%;
-	border: 6px solid rgb(255, 0, 0);
-  border-left: 14px solid rgb(255, 0, 0);
-  border-right: 14px solid rgb(255, 0, 0);
-	margin: auto;
+  width: 80px;
+	height: 3.1rem ;
+	border-radius: 7px;
+  font-weight: bold;
+	font-size: 19px ;
+  align-items: center;
+  padding-top:13px;
+  box-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.751);
+
   background-color: rgb(251, 0, 0);
-	text-align: center;
-  font-size: 19px ;
-  box-shadow: 1px 1px rgba(0, 0, 0, 0.751);
+	
+  
+ 
 }
 .reda1{
-  font-family: cursive;
-  font-size: 19px ;
-  width: 300px;
-	height: 300px;
-	border-radius: 10%;
-	border: 6px solid #000;
+  
   color: rgb(255, 255, 255);
-	margin: auto;
+  width: 4rem 1rem;
+	height: 3.1rem ;
+	border-radius: 7px;
+  font-weight: bold;
+	font-size: 19px ;
+  align-items: center;
+  padding-top:13px;
+  box-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.751);
   background-color: #000;
-  box-shadow: 1px 1px rgba(45, 45, 45, 0.751);
-  text-align: center;
-  opacity: 1;
+  
 }
 .reda1:hover, .reda2:hover, .reda:hover {
   opacity: 0.7;
   cursor: pointer;
   margin-left: 1px;
+  transition: 0.3s;
 }
 
 .reda2{
-  font-family: cursive;
-  width: 300px;
-	height: 300px;
-	border-radius: 10%;
+  font-family: sans-serif;
+  width: 75px;
+	height: 50px;
+  padding-top: 6px;
+  font-weight: bold;
+	border-radius:7px;
 	border: 6px solid rgb(255, 255, 255);
   color: rgb(0, 0, 0);
 	margin: auto;
   background-color: rgb(255, 255, 255);
 	text-align: center;
-  font-size: 17px ;
+  font-size: 19px ;
 }
 
 
@@ -205,25 +233,41 @@ thead tr th {
 }
 
 .tabela{
-  margin-top: 10%;
+  margin-top: 1%;
 }
 
 
 } 
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
+
+
+  .box{
+display: none;
+
+
+
+  }
 body{ 
 max-width: 100%;
-width: 100%;
+
 
 text-align: center;
 justify-content: center;
 align-items: center;
 }
-.box, .tabela table tbody{
+
+.tb-content{
   max-width: 100%;
-  font-size: 18px;
+  font-family:sans-serif;
+  position: relative;
+  max-height:150px;
+}
+.tabela{
+top:0px;
+  max-width: 300px;
+  font-size: 14px;
 }
 .tbody, tr, td {
   max-width: 96%;
@@ -236,11 +280,30 @@ align-items: center;
 
 } 
 
-.tabela-title, .title{
+.tabela-title, .title{ 
   padding: 4px, 8px;
   font-size: 9px;
- 
+ margin-bottom: -10px;
 }
+
+.title{
+
+  position: fixed;
+}
+
+
+
+.reda1:hover, .reda2:hover, .reda:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  margin-left: 1px;
+}
+
+
+
+
+
+
 
 
 .tabela-title, h1{
@@ -248,7 +311,7 @@ align-items: center;
 }
 .table th, 
 .tabela td {
-padding: 4px 55px;
+padding: 4px 4px;
 border: 1px solid #50545a;
 
 text-align: center;
@@ -268,11 +331,59 @@ text-align: center;
 justify-content: center;
 align-items: center;
    
+}@media only screen and (max-width: 420px) {
+
+.LineChart{
+height: 270px;
+width: 100px;
+
+font-size:14px;
+position: inherit;
+
+padding: 50px;
+
+}
+
+
+  
 }
 
 
 
+}
+.button-bottom{
+
+  width: 50px;
+  position: fixed;
+  right: 10%;
+  height: 20px; 
+  font-size: 3rem; 
+  z-index: 1; 
+  cursor: pointer; 
+  color: red; 
+ background-color: transparent;
+ text-decoration: none;
+
+}
 
 
+.header {
+  text-align: center;
+}
 
+#nav {
+  background-color: red;
+  color: red;
+}
+
+.toast {
+  margin: 0 auto;
+}
+
+.custom-btn-toolbar {
+  display: inline !important;
+}
+
+.custom-btn-toolbar > .btn {
+  margin-right: 1rem;
 }

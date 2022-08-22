@@ -1,14 +1,9 @@
 const FormatDate = (date: string): string => {
-   const dateFormatted = new Date(date);
-   const year = dateFormatted.getFullYear();
-   
-   const day = dateFormatted.getDate() > 9 
-   ? dateFormatted.getDate() : `0${dateFormatted.getDate()}`;
-   
-   const month = dateFormatted.getMonth() + 1 > 9
-   ? dateFormatted.getMonth() + 1 : `0${dateFormatted.getMonth() + 1}`; 
+   const [year1, month1, day1] = date.split('-')
 
-   return `${day}`;
+   
+
+   return `${day1}/${"07"}/${year1}`;
 };
 
 

@@ -6,10 +6,15 @@ import gains from '../../../repositories/gains';
 import ContentHeader from '../../../ContetHeader';
 import SelecInput from '../../SelectInput/Index';
 import HistoryFinanceCard from '../../HistoryFinanceCard';
-
+import "react-datepicker/dist/react-datepicker.css";
 import FormatCurrency from '../../../Utils/fomatCurrency';
 import FormatDate from     '../../../Utils/fomartDate';
 import listOfMonths from '../../../Utils/months';
+
+import months from '../../../Utils/months';
+
+import ButtonMover from '../../ButtonMove';
+import Whatssap from '../../whatssap/index';
 
 
 
@@ -27,7 +32,7 @@ interface IData {
   number: string;
   color: String;
   datetime: string;
-  dataFormatted: string;
+  dateFormatted: string;
   tagColor: string;
   amount: string;
 
@@ -37,16 +42,17 @@ interface IData {
 const List: React.FC<IRouteParams> = ({ match }) => {
 const [data, setData] = useState<IData[]>([]);
 const [monthSelected, setMonthSelected] = useState<number>(new Date().getMonth() + 1);
-const [daySelected, setDaySelected] = useState<number>(new Date().getDay() + 1);
+const [daySelected, setDaySelected] = useState<number>(new Date().getDate());
 const [yearSelected, setYearSelected] = useState<number>(new Date().getFullYear()); 
 const [selectedColor, setSelectedColor] = useState(['red', 'black', 'white' ]);
+const [startDate, setStartDate] = useState(new Date());
 
 const type = match.params.type;
 
 
 
   const title = useMemo(() =>{
-  return type === 'entry-balance' ? 'Relatório Dash' : 'Red'
+  return type === 'entry-balance' ? 'Relatório Dash' : 'Relatório Dash'
 
   },[type])
   
@@ -74,6 +80,8 @@ if(!uniqueYears.includes(year)){
 }
 
 });
+
+ 
 return uniqueYears.map(year => {
 
   
@@ -87,17 +95,17 @@ return uniqueYears.map(year => {
 
 
 
-const day = useMemo(() =>{
-  return listOfMonths.map((day, index) => {
+const months = useMemo(() =>{
+  return listOfMonths.map((month, index) => {
 
     return{
       value: index + 1,
-      label: day,
+      label: month,
     }
-
+   
   },[]);
  
-   
+
 
   
   },[]);
@@ -113,10 +121,10 @@ const day = useMemo(() =>{
     }
   }
 
- const handleDaySelected = (day: string) => {
+ const handleMonthSelected = (month: string) => {
         try {
-            const parseDay = Number(day);
-            setDaySelected(parseDay);
+            const parseMonth = Number(month);
+            setMonthSelected(parseMonth);
         }
         catch{
             throw new Error('invalid day value. Is accept 0 - 24.')
@@ -144,10 +152,10 @@ useEffect(() =>{
 
 const filteredData = listData.filter(item => {
 const date = new Date (item.date);  
-const day = date.getDay();
+const month = date.getMonth()+1;
 const year = date.getFullYear();
 
-return day === daySelected && year === yearSelected && selectedColor.includes(item.color);
+return month === monthSelected && year === yearSelected && selectedColor.includes(item.color);
 });
 
 
@@ -159,7 +167,7 @@ const FormattedDate = filteredData.map(item => {
   color:item.color,
   amount:FormatCurrency(Number(item.amount)),
   datetime:item.datetime,
-  dataFormatted: FormatDate(item.date),
+  dateFormatted: FormatDate(item.date),
   tagColor: item.color === 'red' && '#ff0000' || item.color === 'black' && '#000' || '#fff',
   
 }
@@ -167,25 +175,22 @@ const FormattedDate = filteredData.map(item => {
 });
 
 setData(FormattedDate);
-},[listData, monthSelected, yearSelected, data.length, daySelected, selectedColor]);
+},[listData, yearSelected, data.length, monthSelected, selectedColor]);
 
 
 
   return (
     <Container>
-    
+       
+       <Whatssap />
     <ContentHeader title={title} lineColor={lineColor}>
 
-    <SelecInput  options={day} onChange={(e) => handleDaySelected(e.target.value)} defaultValue={daySelected} 
+    <SelecInput  options={months} onChange={(e) => handleMonthSelected(e.target.value)} defaultValue={monthSelected} 
        />
    
-    <SelecInput 
-                    options={years} 
-                    onChange={(e) => handleYearSelected(e.target.value)} 
-                    defaultValue={yearSelected}
-                />
     
-  
+
+
 
 
     </ContentHeader>
@@ -229,8 +234,8 @@ setData(FormattedDate);
         key={item.id}
         tagColor={item.tagColor}
         title={item.number}
-       
-        datetime={item.datetime} subtilte={''}    />
+        subtitle={item.dateFormatted}
+        datetime={item.datetime}     />
     ))
 
   } 

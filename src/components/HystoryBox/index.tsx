@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
     ResponsiveContainer,
     LineChart,
@@ -16,49 +17,65 @@ import {
     Header,
     LegendContainer,
     Legend,
+    
 }  from './styles';
 
 
 interface IHistoryBoxProps {
     data: {
-   
-        percent: number;
+        month: string;
+        amountEntry: number;
      
     }[],
     lineColorAmountEntry: string;
     lineColorAmountOutput: string;
+    lineColorAmountRed: string;
+    lineColorAmountWhite: string;
 }
 
 const HistoryBox: React.FC<IHistoryBoxProps> = ({
-    data, lineColorAmountEntry, lineColorAmountOutput
+    data, lineColorAmountEntry, lineColorAmountOutput, lineColorAmountRed, lineColorAmountWhite
 }) => (
     <Container>
         <Header>
-            <h2>Histórico de saldo</h2>
+            <h2>Análise diária</h2>
 
             <LegendContainer>
                 <Legend color={lineColorAmountEntry}>
                     <div></div>
-                    <span>Entradas</span>
+                    <span>Black</span>
                 </Legend>
-           
+
+                <Legend color={lineColorAmountWhite}>
+                    <div></div>
+                    <span>White</span>
+                </Legend>
                 <Legend color={lineColorAmountOutput}>
                     <div></div>
-                    <span>Saídas</span>
+                    <span>Red</span>
                 </Legend>
             </LegendContainer>
         </Header>
 
-        <ChartContainer>
-            <ResponsiveContainer>
-                <LineChart data={data} margin={{ top: 5, right: 20, left: 20, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#cecece" />
+        <ChartContainer className='LineChart'>
+            <ResponsiveContainer width="100%" aspect={3}>
+                <LineChart  data={data} margin={{ top: 5, right: 20, left: 20, bottom: 5 }}>
+                    <CartesianGrid  strokeDasharray="3 3" stroke="#cecece" />
                     <XAxis dataKey="month" stroke="#cecece" />
                    
                     <Line 
                         type="monotone"                
                         dataKey="amountEntry"
-                        name="Entradas"
+                        name="red"
+                        stroke={lineColorAmountRed}
+                        strokeWidth={5}
+                        dot={{ r: 5}}
+                        activeDot={{ r: 8}}
+                    />
+                    <Line 
+                        type="monotone"                
+                        dataKey="amountRed"
+                        name="black"
                         stroke={lineColorAmountEntry}
                         strokeWidth={5}
                         dot={{ r: 5}}
@@ -66,9 +83,9 @@ const HistoryBox: React.FC<IHistoryBoxProps> = ({
                     />
                     <Line 
                         type="monotone"                
-                        dataKey="amountOutput"
-                        name="Saídas"
-                        stroke={lineColorAmountOutput}
+                        dataKey="amountWhite"
+                        name="White"
+                        stroke={lineColorAmountWhite}
                         strokeWidth={5}
                         dot={{ r: 5}}
                         activeDot={{ r: 8}}

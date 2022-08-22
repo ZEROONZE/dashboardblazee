@@ -3,10 +3,15 @@ import React from 'react';
 
 import { Grid } from './styles';
 
+
 import MainHeader from '../MainHeader';
-import Aside from '../Aside';
+import Aside from '../Aside/index';
 import Content from '../Content';
 import Dashboard from '../pages/Dashboard';
+import Whatssap from '../whatssap';
+import createGlobalStyle from '../../styles/GlobalStyles'
+import GlobalStyles from '../../styles/GlobalStyles';
+
 
 interface BaseLayoutProps {
   children?: React.ReactNode;
@@ -20,8 +25,10 @@ return (
 
     <Grid>
         <MainHeader />
+        <GlobalStyles/>
         <Aside />
         <Content>
+        
             { children }
             
         </Content>

@@ -1,12 +1,26 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 interface ILegendProps{
 
     color: string;
 
 }
+const animate = keyframes`
+ 0% {
+transform: translate(100px);
+opacity: 0;
+ }
+ 50%{
+    opacity: 3;
+ }
+ 100%{
+    transform: translate(0px);
+    opacity: 1;
+ }
+
+`;
 
 export const Container = styled.div`
-width: 40%;
+width: 65%;
 height: 300px;
 margin:  30px 0;
 padding: 0px 10px;
@@ -15,6 +29,11 @@ color: #d3d3d3;
 border-radius: 7px;
 display: flex;
 font-weight: bold;
+animation: ${animate} .5s;
+@media(max-width: 770px){
+        display: flex;
+        width: 100%;
+    }
 `;
 
 
@@ -47,7 +66,18 @@ text-align: center;
 >span{
     margin-left: 5px;
 }
-
+@media(max-width: 1345px){
+        padding: 0 15px 5px;
+        margin-bottom: 7px;
+        > h2 {
+            margin-top: 15px;
+            margin-bottom: 7px;
+        }
+    }
+    @media(max-width: 420px){
+        padding: 10px;
+        margin-bottom: 1px;
+    }
 
 `;
 export const SideRight = styled.main`

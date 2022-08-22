@@ -5,11 +5,11 @@ export const Container = styled.div`
     color: ${props => props.theme.colors.white};
     background-color: ${props => props.theme.colors.primary};
     padding: 25px;
-    height: calc(100vh - 70px);
+    height: 100%;
     overflow-y: scroll;
 
     ::-webkit-scrollbar{
-        width: 10px;
+        width: 5px;
 
     }
     ::-webkit-scrollbar-thumb {

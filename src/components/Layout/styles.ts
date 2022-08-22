@@ -13,10 +13,22 @@ export const Grid = styled.div`
     grid-template-rows: 70px auto;
 
     grid-template-areas:
-     'AS MH'
-     'AS CT';
-     height: 100vh;
+     'MH MH'
+     'CT CT';
+     width: 100%;
+     margin: 0;
+     height: 100%;
 
+    @media(max-width: 600px){
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 100%;
+ 
+        grid-template-areas:
+        'MH'
+        'CT';
+           
 
+    }
 
     `;

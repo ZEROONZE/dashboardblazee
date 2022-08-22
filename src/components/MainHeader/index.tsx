@@ -4,13 +4,23 @@ import { Container, Profile, Welcome, UserName  } from './styles';
 import emojis from '../../Utils/emojis';
 import Toggle from '../Toggle';
 import { useTheme } from '../../components/hooks/theme';
-const MainHeader:React.FC = () => {
- const {toggleTheme, theme} = useTheme();
+import { Link } from 'react-router-dom';
+import { useAuth } from '../hooks/auth';
+import { FcExport } from 'react-icons/fc';
+const MainHeader: React.FC = () => {
+ 
+  const { signOut } = useAuth();
+  const {toggleTheme, theme} = useTheme();
  const [darkTheme, setDarkTheme] = useState (() => theme.title === 'dark' ? true : false);
  
 const handleChangeTheme = () => {
   setDarkTheme(!darkTheme);
   toggleTheme();
+
+
+
+
+
 }
 
   const emoji  = useMemo(() => {
@@ -22,20 +32,30 @@ const handleChangeTheme = () => {
 
   }, []);
 
+
+
+
   return (
 <Container>
   <Toggle 
+
    labelLeft="Light"
    labelRight="Dark" 
   checked={darkTheme}
   onChange={handleChangeTheme}
+  
   />
     <Profile>
           <Welcome>Olá, {emoji}</Welcome>
-          <UserName>Lucas Nogueira</UserName>
+          <UserName>Seja bem vindo!</UserName>
           
 
     </Profile>
+    <Link className="sair"onClick={signOut} to={'/'}>
+
+<FcExport className='iconexit'/>
+        Exit
+      </Link>
     </Container>
     
   );

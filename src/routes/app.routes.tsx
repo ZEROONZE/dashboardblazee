@@ -1,26 +1,47 @@
 import React from "react";
-import { Routes, Route, BrowserRouter} from 'react-router-dom'
+import { Routes, Route,  } from 'react-router-dom'
 import Layout from "../components/Layout";
+import Pagamentos from "../components/Pagamentos";
 import Dashboard from "../components/pages/Dashboard";
-import Api from "../components/pages/Dashboard/Home";
-import List from "../components/pages/List";
+import App from "../components/pages/Dashboard/Home";
+import Mobile from "../components/pages/Dashboard/mobileAPI/mobile";
+import Teste from "../components/Teste";
 
 
-const AppRoutes: React.FC = () => {  
 
-return ( 
+
+
+
+import Teste4 from "../components/Teste/teste3";
+import Double from "../components/Grupos/Double";
+import Estrategias from "../components/Estrategias";
+const AppRoutes: React.FC = () => {
+ 
+
+
+
+
+  return (
     <Layout>
       <Routes>
-        <Route path="/dashboard"  element={<Dashboard />} />
-        <Route path="/list/:type" element={<List match={{
-        params: {
-          type: ""
-        }
-      }} />} />
-        <Route path="/list/relatorios" element={<Api />} />
+       
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/list/:type" element={<Teste match={{
+          params: {
+            type: ""
+          }
+        }} />} />
+        <Route path="/list/relatorios" element={<App />} />
+        <Route path="/list/relatorios2" element={<Mobile />} />
+        <Route path="/Pagamentos" element={<Pagamentos />} />
+       
+   
+    <Route path="/Teste4" element={<Teste4 />} />
+    <Route path="/Double" element={<Double />} />
+    <Route path="/Estrategias" element={<Estrategias />} />
       </Routes>
     </Layout>
-);
+  );
 
 }
 export default AppRoutes;

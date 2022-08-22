@@ -1,10 +1,23 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 
 interface ITagProps{
     color: string;
 }
+const animate = keyframes`
+ 0% {
+transform: translate(-100px);
+opacity: 0;
+ }
+ 50%{
+    opacity: 3;
+ }
+ 100%{
+    transform: translate(0px);
+    opacity: 1;
+ }
 
+`;
 export const Container = styled.li`
 background-color: ${props => props.theme.colors.tertiary};
 list-style: none;
@@ -23,7 +36,7 @@ justify-items: center;
 
 transition: all .3s;
 
-
+animation: ${animate} .5s;
 
 &:hover{
     opacity: .7;
@@ -63,6 +76,7 @@ position: relative;
     div small{
         padding-left: 19px;
         font-weight: 500;
+        padding-left: 40px;
     }
 `;
 export const Tag = styled.div<ITagProps>`

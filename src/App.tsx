@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+
 import Aside from './components/Aside';
 import Content from './components/Content';
 import { Grid } from './components/Layout/styles';
@@ -24,7 +24,7 @@ const App: React.FC = () => {
       return ( 
         <ThemeProvider theme={theme}>
         <GlobalStyles />
-        
+      
        <RoutesPages />
     </ThemeProvider>
   );
