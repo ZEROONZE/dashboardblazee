@@ -77,7 +77,7 @@ color: #fff610;
  align-items: center;
  margin-bottom: 30px;
  animation: ${animate} .5s;
-
+margin-left: -10px;
  @media(max-width: 600px){
    margin-top: 10px
 

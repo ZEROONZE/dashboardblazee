@@ -84,21 +84,21 @@ export const Content = styled.div`
 display: grid;
 align-items: center;
 justify-content: center;
-height: 100%;
-
+max-height: 90%;
+margin-top: -10px;
 text-align: center;
 .tabela1{
     display: grid;
-    width: 1000px;
-    height: 100%;
-    max-height: 95%;
+    max-width: 1500px;
+    height: 85vh;
+    max-height: 80%;
     overflow-y: auto;
-    max-width: 100%;
+    max-width: 140%;
     text-align: center;
     align-items: center;
     ::-webkit-scrollbar{
   width: 10px;
-
+  margin: 29px;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
@@ -115,12 +115,15 @@ text-align: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 text-align: center;
 gap: 19px;
-height: 100%;
+padding: 29px;
+
 width: 100%;
-grid-gap: 25px;
+
 text-align: center;
 align-items: center;
 justify-content: center;
+max-height: 100vh;
+
 }
 .datatime{
   margin-left: -5px;
@@ -143,13 +146,26 @@ justify-content: center;
 .tabela1{
     display: grid;
     height: 100%;
-    max-height: 95%;
+    max-height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    max-width: 120%;
+    max-width: 100%;
     width: 400px;
     align-items: center;
 text-align: center;
+margin: 29px;
+::-webkit-scrollbar{
+  width: 10px;
+ padding: 30px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color:#fff;}
+
+::-webkit-scrollbar-track {
+  
+  background-color: rgba(0, 0, 0, 0.472);
+} 
   }
   .tabela2{
     display: grid;
@@ -159,8 +175,8 @@ gap: 30px;
 justify-content: center;
 align-items: center;
 margin: auto;
-margin-top: 40px;
-max-height: 96%;
+
+max-height: 100%;
 max-width: 100%;
 align-items: center;
 text-align: center;

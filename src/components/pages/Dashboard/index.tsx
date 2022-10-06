@@ -38,14 +38,25 @@ const Dashboard: React.FC= () => {
   const [produtos, setProdutos] = useState<IData[]>([]);
   const [startDate, setStartDate] = useState(new Date())
 
-  useEffect(() => {
-    api.get('/report?date=' + format(startDate, "ddMMyyyy"))
+
+
+
+  useEffect( () => {
+    async function axiosData() {
+      
+    
+   await api.get('/report?date=' + format(startDate, "ddMMyyyy"))
       .then((response) => {
         console.log(response)
         setProdutos(response.data)
-    })
+      
+    
+      })
 
-   
+    }
+
+    axiosData();
+
   }, [startDate])
 
  console.log(startDate)
@@ -147,10 +158,10 @@ const totalBlack =  useMemo(() =>{
 const relationExpensesVersusGains = useMemo(() =>{
 const total = totalBlack + totalRed + totalWhite;
 
-const PercentWhite = Number(((totalWhite / total) * 100).toFixed(0));
+const PercentWhite = Number(((totalWhite / total) * 100).toFixed(2));
 
-const PercenteRed = Number(((totalRed / total) * 100).toFixed(0));
- const PercenteBlack = Number(((totalBlack / total) * 100).toFixed(0));
+const PercenteRed = Number(((totalRed / total) * 100).toFixed(1));
+ const PercenteBlack = Number(((totalBlack / total) * 100).toFixed(1));
 const data = [
   {
     name: "White",
@@ -241,6 +252,7 @@ color="white"
 amount={totalWhite}
 footerlabel="Atualizado com base nas entradas"
 icon="dolar"
+
 />
 
 <WalletBox 
@@ -259,9 +271,9 @@ footerlabel="Atualizado com base nas entradas"
 icon="arrowDown"
 />
 <MessageBox
-title='Estratégia de sucesso!!'
-description='Com base nos resultados apurados, quando vier uma sequência de dois números 13 de cor Black, se as próximas duas cores vier black, aposte no vermelho e cubra o branco. '
-footerText='Foram analisada 9 resultados, com 8 acertos!'
+title='DICAS PARA JOGAR NO BRANCO'
+description='A blaze trabalha com padrão de % de cores, o branco tem uma média de 6% a 8%, ou seja, se estiver em 6% de branco tem mais possibilidade de cair branco do que em 8%, se for jogar para pegar o branco deixe para começar jogar quando estiver em 6%, e depois que cair mantém até a 6° casa, porque também tem possibilidade de cair branco dobrado.'
+footerText='Essas apurações foram analisadas por nosso especialistas!'
 icon={happyImg}
 
 

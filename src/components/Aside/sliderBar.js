@@ -27,7 +27,7 @@ export const SidebarData = [
     subNav: [
      
       {
-        title: 'Double PC On',
+        title: 'Double online',
         path: '/list/relatorios',
         icon: <FcIcons.FcComboChart />,
         cName: 'sub-nav'
@@ -39,12 +39,12 @@ export const SidebarData = [
       },
       {
         title: 'Crash',
-        path: '#',
+        path: '/Teste4',
         icon: <FcIcons.FcBullish />
       },
       {
         title: 'Branco',
-        path: '#',
+        path: '/Teste4',
         icon: <FcIcons.FcBullish />
       }
     ]
@@ -56,7 +56,7 @@ export const SidebarData = [
   },
   {
     title: 'Promoções',
-    path: '/team',
+    path: '/Teste4',
     icon: <FcIcons.FcAdvertising />
   },
   {
@@ -75,22 +75,22 @@ export const SidebarData = [
       },
       {
         title: 'Crash grátis',
-        path: '/messages/message2',
+        path: '/Crash',
         icon: <BsIcons.BsTelegram  style={{ color: '#6495ed'  }} />
       },
       {
         title: 'Branco grátis',
-        path: '/messages/message2',
+        path: '/Teste4',
         icon: <BsIcons.BsTelegram  style={{ color: '#6495ed'  }} />
       },
       {
         title: 'Double pago',
-        path: '/messages/message2',
+        path: '/Teste4',
         icon: <BsIcons.BsTelegram  style={{ color: '#6495ed'  }} />
       },
       {
         title: 'Crash pago',
-        path: '/messages/message2',
+        path: '/Teste4',
         icon: <BsIcons.BsTelegram  style={{ color: '#6495ed'  }} />
       }
     ]

@@ -15,6 +15,7 @@ import Teste from "../components/Teste";
 import Teste4 from "../components/Teste/teste3";
 import Double from "../components/Grupos/Double";
 import Estrategias from "../components/Estrategias";
+import TelegranCrash from "../components/Grupos/Crash";
 const AppRoutes: React.FC = () => {
  
 
@@ -35,7 +36,7 @@ const AppRoutes: React.FC = () => {
         <Route path="/list/relatorios2" element={<Mobile />} />
         <Route path="/Pagamentos" element={<Pagamentos />} />
        
-   
+        <Route path="/Crash" element={<TelegranCrash />} />
     <Route path="/Teste4" element={<Teste4 />} />
     <Route path="/Double" element={<Double />} />
     <Route path="/Estrategias" element={<Estrategias />} />

@@ -24,13 +24,13 @@ return(!!isLogged)
 
 
 const signIn =  (login: string, password: string) => {
-    if (login ==='Lucas.Nogueira' && password === '298020' || login ==='TESTE' && password === '123' || login ==='Wellington.Saraiva' && password === '102030' ){
+    if (login ==='LUCAS.NOGUEIRA' && password === '123' || login ==='CRISLANE.KEVIA' && password === '123456' || login ==='ACESSO.GRATIS' && password === '123' || login ==='Wellington.Saraiva' && password === '102030' || login ==='RAFAEL.OLIVEIRA' && password === '1234'){
         localStorage.setItem('@minha-carteira:logged', 'true');
         setLogged(true);
       
         
     }else{
-        alert('Senha ou usuário inválidos!')
+        alert('Senha ou usuário inválidos ou você ainda não é assinante!')
     }
 }
 

@@ -13,7 +13,7 @@ export default function Teste4() {
       <div>
       
 
-<h1>Em breve...</h1>
+<h1>Em breve para assinantes...</h1>
 
 </div>
     </>

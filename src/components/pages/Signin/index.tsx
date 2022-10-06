@@ -15,7 +15,7 @@ const {signIn} = useAuth();
  
 <Logo>
 <img src={LogoImg} alt="logo dashboard"/>
-<h1>Dashboard Blaze</h1>
+<h1>RELATÓRIOS BLAZE</h1>
 
 </Logo>
 <Form onSubmit={() => signIn(login, password)}>

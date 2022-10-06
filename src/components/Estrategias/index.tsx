@@ -8,6 +8,8 @@ return(
 
 
     <Container>
+
+        <p>Para saber mais sobre como funciona essas estratégias, quais dias e horário para usar elas, adquiri nosso plano pago.  </p>
         <div className="One">
                 <p className="redaa">7</p>
                 <p className="redaa">7</p>

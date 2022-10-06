@@ -7,7 +7,7 @@ return(
 
 <Container>
 <div className="texto-geral">
-<h1>Como funciona o grupo pago ?</h1>
+<h1>Como funciona grupo de sinal DOUBLE ?</h1>
 
 <p>Vamos lá, como o grupo pago você terá lucro todos dias, basta seguir as dicas e estrátegias, o grupo enviara um sinal de acordo com as estratégias</p>
 <p>bastar clicar no link é apostar nas cores indicada pelo boot, o boot gera cerca de 120 sinais por dia, com média de 89% de acerto. 

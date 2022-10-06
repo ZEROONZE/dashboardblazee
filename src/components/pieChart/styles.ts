@@ -25,7 +25,7 @@ height: 300px;
 margin:  30px 0;
 padding: 0px 10px;
 background-color: ${props => props.theme.colors.tertiary};
-color: #d3d3d3;
+color: #a9a9a9;
 border-radius: 7px;
 display: flex;
 font-weight: bold;
@@ -55,7 +55,7 @@ margin-top: 7px;
 padding:10px 20px;
 > div {
 background-color: ${props => props.color};
-width: 45px;
+width: 55px;
 height: 45px;
 border-radius: 5px;
 font-size: 18px;

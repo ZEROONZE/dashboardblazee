@@ -8,13 +8,13 @@ return(
 <Container>
    
 <a
-        href="https://t.me/botgreenforever"
+        href="https://t.me/botgreenforeverDouble"
         className="whatsapp_float"
         target="_blank"
         rel="noopener noreferrer"
       > 
         <FaTelegram className="fa fa-whatsapp whatsapp-icon"></FaTelegram>
-        <p className='grupofree'>Grupo free</p>
+        <p className='grupofree'>Grupo grátis</p>
       </a>
 
 
